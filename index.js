@@ -9,6 +9,7 @@ async function main() {
   console.log('INSERT')
   await prisma.foo.createMany({ data: new Array(40000).fill({}) })
 
+  
   console.log("SELECT")
   await prisma.foo.findMany({
     include: { bars:true }
